@@ -1,3 +1,7 @@
+//Get today's date
+// var currentDay = moment().format('MMMM Do, YYYY');
+// document.getElementById("currentDay").innerHTML = `${currentDay}`;
+
 //Get the city
 var searchBtn = document.getElementById("search-btn")
     .addEventListener("click",getCity);
@@ -41,10 +45,16 @@ function getCity () {
 
                 //set up each of the respective ids
                 var dailyTemp = daily.temp.day;
+                var dailyWind = daily.wind_speed;
+                var dailyHumidity= daily.humidity;
+                var dailyUVIndex = daily.uvi;
 
                 //setting each of the html elements according
                 //id = "dTemp0"
                 document.getElementById("dTemp" + i).innerHTML = `Temp: ${dailyTemp} degrees F`;
+                document.getElementById("dWind" + i).innerHTML = `Wind: ${dailyWind} MPH`;
+                document.getElementById("dHumidity" + i).innerHTML = `Humidity: ${dailyHumidity} %`;
+                document.getElementById("dUVIndex" + i).innerHTML = `UV Index: ${dailyUVIndex}`;
 
 
             }
